@@ -27,11 +27,7 @@ const Layout = ({ location, title, description, children, lastActive }) => {
           </h1>
           <span>{description}</span>
           <p className="last-active">
-            <small>
-              <span className="detail">
-                Last published {lastActive} days ago
-              </span>
-            </small>
+            <span className="detail">Last published {lastActive} days ago</span>
           </p>
         </div>
         <Avatar avatarSize={100} withHalo />

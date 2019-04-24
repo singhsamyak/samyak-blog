@@ -17,7 +17,7 @@ const Posts = ({ isCompactView, posts }) => {
           key={post.fields.slug}
         >
           <div className={postClass}>
-            <h3>{title}</h3>
+            <h2>{title}</h2>
             {isCompactView ? null : (
               <div>
                 <small>

@@ -1,6 +1,10 @@
 @import "../../utils/colors.scss";
 $montserrat: "Montserrat", sans-serif;
 
+body {
+  font-size: 1.1em;
+}
+
 header {
   margin-bottom: 20px;
   padding: 20px 0;
@@ -147,6 +151,6 @@ ol {
   }
 
   .detail {
-    color: $frozen;
+    color: $silver;
   }
 }
