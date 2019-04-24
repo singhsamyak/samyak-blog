@@ -52,13 +52,13 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Hello World`,
-        short_name: `GatsbyJS`,
+        name: `Samyak's Blog`,
+        short_name: `Samyak`,
         start_url: `/`,
         background_color: `#ffffff`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: ``,
+        icon: `./static/favicon.ico`,
       },
     },
     `gatsby-plugin-offline`,
