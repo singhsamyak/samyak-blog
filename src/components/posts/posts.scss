@@ -1,0 +1,21 @@
+@import "../../utils/colors.scss";
+
+.post {
+  transition: 0.2s all ease;
+  margin-bottom: 40px;
+  padding: 25px;
+}
+
+.post:focus {
+  outline: 0;
+  box-shadow: 0 0 2px 3px $turquoise;
+}
+
+.post-compact {
+  margin-bottom: 10px;
+  padding: 10px 15px;
+
+  h3 {
+    font-size: 1.2em;
+  }
+}

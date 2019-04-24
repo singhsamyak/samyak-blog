@@ -1,12 +1,9 @@
 {
-  "name": "gatsby-starter-blog",
+  "name": "untitled",
   "private": true,
-  "description": "A starter for a blog powered by Gatsby and Markdown",
+  "description": "A personal blog by Samyak Singh",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
-  "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
-  },
+  "author": "Samyak Singh <samyaksingh94@gmail.com>",
   "dependencies": {
     "gatsby": "^2.3.15",
     "gatsby-image": "^2.0.37",
@@ -15,16 +12,19 @@
     "gatsby-plugin-manifest": "^2.0.27",
     "gatsby-plugin-offline": "^2.0.25",
     "gatsby-plugin-react-helmet": "^3.0.12",
+    "gatsby-plugin-sass": "^2.0.11",
     "gatsby-plugin-sharp": "^2.0.32",
     "gatsby-plugin-typography": "^2.2.11",
     "gatsby-remark-copy-linked-files": "^2.0.11",
     "gatsby-remark-images": "^2.0.6",
-    "gatsby-remark-prismjs": "^3.2.7",
+    "gatsby-remark-prismjs": "^3.2.8",
     "gatsby-remark-responsive-iframe": "^2.1.1",
     "gatsby-remark-smartypants": "^2.0.9",
     "gatsby-source-filesystem": "^2.0.29",
     "gatsby-transformer-remark": "^2.3.8",
     "gatsby-transformer-sharp": "^2.1.17",
+    "lodash": "^4.17.11",
+    "node-sass": "^4.11.0",
     "prismjs": "^1.16.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
@@ -33,7 +33,8 @@
     "typeface-merriweather": "0.0.72",
     "typeface-montserrat": "0.0.54",
     "typography": "^0.16.19",
-    "typography-theme-wordpress-2016": "^0.16.19"
+    "typography-theme-wordpress-2016": "^0.16.19",
+    "window-or-global": "^1.0.1"
   },
   "devDependencies": {
     "prettier": "^1.16.4"
@@ -52,7 +53,7 @@
     "build": "gatsby build",
     "develop": "gatsby develop",
     "format": "prettier --write src/**/*.{js,jsx}",
-    "start": "npm run develop",
+    "start": "yarn run develop",
     "serve": "gatsby serve",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
   }

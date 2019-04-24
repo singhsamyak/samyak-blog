@@ -1,63 +1,57 @@
 import React from "react"
-import { Link, graphql } from "gatsby"
+import { graphql } from "gatsby"
+import get from "lodash/get"
+import Layout from "../components/layout/Layout"
+import Posts from "../components/posts/Posts"
+import SEO from "../components/seo/SEO"
+import ViewToggle from "../components/toggle/ViewToggle"
+import { useCompactView } from "../hooks/useCompactView"
 
-import Bio from "../components/bio"
-import Layout from "../components/layout"
-import SEO from "../components/seo"
-import { rhythm } from "../utils/typography"
+export default function(props) {
+  const [viewMode, toggleViewMode] = useCompactView()
 
-class BlogIndex extends React.Component {
-  render() {
-    const { data } = this.props
-    const siteTitle = data.site.siteMetadata.title
-    const posts = data.allMarkdownRemark.edges
+  const { data } = props
+  const siteTitle = get(data, "site.siteMetadata.title")
+  const siteDescription = get(data, "site.siteMetadata.description")
+  const posts = get(data, "allMarkdownRemark.edges")
 
-    return (
-      <Layout location={this.props.location} title={siteTitle}>
-        <SEO
-          title="All posts"
-          keywords={[`blog`, `gatsby`, `javascript`, `react`]}
-        />
-        <Bio />
-        {posts.map(({ node }) => {
-          const title = node.frontmatter.title || node.fields.slug
-          return (
-            <div key={node.fields.slug}>
-              <h3
-                style={{
-                  marginBottom: rhythm(1 / 4),
-                }}
-              >
-                <Link style={{ boxShadow: `none` }} to={node.fields.slug}>
-                  {title}
-                </Link>
-              </h3>
-              <small>{node.frontmatter.date}</small>
-              <p
-                dangerouslySetInnerHTML={{
-                  __html: node.frontmatter.description || node.excerpt,
-                }}
-              />
-            </div>
-          )
-        })}
-      </Layout>
-    )
-  }
+  const lastPostDate = new Date(posts[0].node.frontmatter.date)
+  const today = new Date()
+  const lastActive = Math.floor(
+    (today.getTime() - lastPostDate.getTime()) / 1000 / 60 / 60 / 24
+  )
+
+  return (
+    <Layout
+      location={props.location}
+      title={siteTitle}
+      description={siteDescription}
+      lastActive={lastActive}
+    >
+      <SEO
+        title="Samyak"
+        keywords={[`blog`, `gatsby`, `javascript`, `react`]}
+      />
+      <div className="float-right-container">
+        <ViewToggle viewMode={viewMode} onToggle={toggleViewMode} />
+      </div>
+      <Posts posts={posts} isCompactView={viewMode === "compact"} />
+    </Layout>
+  )
 }
 
-export default BlogIndex
-
-export const pageQuery = graphql`
+export const PageQuery = graphql`
   query {
     site {
       siteMetadata {
         title
+        description
       }
     }
     allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
       edges {
         node {
+          timeToRead
           excerpt
           fields {
             slug
