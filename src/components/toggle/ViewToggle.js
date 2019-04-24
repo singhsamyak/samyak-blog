@@ -6,6 +6,7 @@ const Compact = (
     🗞
   </span>
 )
+
 const Verbose = (
   <span role="img" aria-label="newspaper emoji">
     📰
@@ -18,7 +19,7 @@ const ViewToggle = ({ viewMode, onToggle }) => (
       onToggle={onToggle}
       left={Compact}
       right={Verbose}
-      selected={viewMode === "compact" ? true : false}
+      isChecked={viewMode === "compact" ? true : false}
     />
   </div>
 )

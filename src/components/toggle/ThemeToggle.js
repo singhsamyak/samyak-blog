@@ -1,14 +1,15 @@
 import React from "react"
 import Toggle from "./Toggle"
 
-const Light = (
-  <span role="img" aria-label="sun emoji">
-    🌞
-  </span>
-)
 const Dark = (
   <span role="img" aria-label="moon emoji">
     🌙
+  </span>
+)
+
+const Light = (
+  <span role="img" aria-label="sun emoji">
+    🌞
   </span>
 )
 

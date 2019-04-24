@@ -1,11 +1,13 @@
 import { useState } from "react"
-import { window } from "window-or-global"
+import window from "window-or-global"
 
 export const useLocalStorage = (key, initialValue) => {
   const [storedValue, setStoredValue] = useState(() => {
     try {
-      const item = window.localStorage.getItem(key)
-      return item ? JSON.parse(item) : initialValue
+      if (window && window.localStorage) {
+        const item = window.localStorage.getItem(key)
+        return item ? JSON.parse(item) : initialValue
+      }
     } catch (error) {
       console.log(error)
       return initialValue
@@ -17,7 +19,9 @@ export const useLocalStorage = (key, initialValue) => {
       const valueToStore =
         value instanceof Function ? value(storedValue) : value
       setStoredValue(valueToStore)
-      window.localStorage.setItem(key, JSON.stringify(valueToStore))
+      if (window && window.localStorage) {
+        window.localStorage.setItem(key, JSON.stringify(valueToStore))
+      }
     } catch (error) {
       console.log(error)
     }
