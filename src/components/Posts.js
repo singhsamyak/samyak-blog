@@ -1,6 +1,5 @@
 import React from "react"
 import { Link } from "gatsby"
-import "./posts.scss"
 
 const Posts = ({ isCompactView, posts }) => {
   const renderPosts = posts =>

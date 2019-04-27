@@ -1,9 +1,8 @@
 import React from "react"
 import { Link } from "gatsby"
-import Avatar from "../avatar/Avatar"
-import ThemeToggle from "../toggle/ThemeToggle"
-import { useTheme } from "../../hooks/useTheme"
-import "./layout.scss"
+import Avatar from "./Avatar"
+import ThemeToggle from "./ThemeToggle"
+import { useTheme } from "../hooks/useTheme"
 
 const LinkInlineStyles = {
   boxShadow: `none`,

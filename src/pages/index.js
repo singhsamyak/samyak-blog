@@ -1,11 +1,11 @@
 import React from "react"
 import { graphql } from "gatsby"
 import get from "lodash/get"
-import Layout from "../components/layout/Layout"
-import Posts from "../components/posts/Posts"
-import SEO from "../components/seo/SEO"
-import ViewToggle from "../components/toggle/ViewToggle"
 import { useCompactView } from "../hooks/useCompactView"
+import Layout from "../components/Layout"
+import Posts from "../components/Posts"
+import SEO from "../components/SEO"
+import ViewToggle from "../components/ViewToggle"
 
 export default function(props) {
   const [viewMode, toggleViewMode] = useCompactView()

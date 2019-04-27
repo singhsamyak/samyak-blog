@@ -1,10 +1,9 @@
 import React from "react"
 import Image from "gatsby-image"
 import get from "lodash/get"
-import { useAvatar } from "../../hooks/useAvatar"
-import "./avatar.scss"
+import { useAvatar } from "../hooks/useAvatar"
 
-const Avatar = ({ avatarSize = 50, withHalo = false }) => {
+const Avatar = ({ avatarSize = 60, withHalo = false }) => {
   const { avatar } = useAvatar()
 
   return (

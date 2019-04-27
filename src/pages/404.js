@@ -1,8 +1,8 @@
 import React from "react"
 import { graphql } from "gatsby"
 
-import Layout from "../components/layout/Layout"
-import SEO from "../components/seo/SEO"
+import Layout from "../components/Layout"
+import SEO from "../components/SEO"
 
 export default function({ data, location }) {
   const siteTitle = data.site.siteMetadata.title

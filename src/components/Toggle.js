@@ -1,5 +1,4 @@
 import React, { useState } from "react"
-import "./toggle.scss"
 
 const Toggle = ({ onToggle, left, right, isChecked }) => {
   const [isToggled, setIsToggled] = useState(isChecked)

@@ -1,0 +1,47 @@
+@import "./colors.scss";
+
+.dark {
+  background-color: $dracula;
+  color: $white;
+
+  header {
+    border-bottom: 2px solid $line-dark;
+  }
+
+  h2,
+  h3,
+  blockquote,
+  small {
+    color: $white;
+  }
+
+  article {
+    border-bottom: 2px solid $line-dark;
+  }
+
+  blockquote {
+    border-left-color: $line-dark;
+  }
+
+  .gatsby-highlight {
+    pre {
+      border: 2px solid $line-dark;
+    }
+  }
+
+  .detail {
+    color: $silver;
+  }
+
+  .post {
+    border: 2px solid $line-dark;
+  }
+
+  .toggle-track {
+    border: 2px solid $line-dark;
+  }
+
+  .toggle {
+    background-color: $line-dark;
+  }
+}

@@ -1,9 +1,8 @@
 import React from "react"
 import get from "lodash/get"
-import Bio from "../bio/Bio"
-import Layout from "../layout/Layout"
-import SEO from "../seo/SEO"
-import "./post.scss"
+import Bio from "./Bio"
+import Layout from "./Layout"
+import SEO from "./SEO"
 
 const Post = props => {
   const post = get(props, "data.markdownRemark", null)

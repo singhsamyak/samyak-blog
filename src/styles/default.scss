@@ -1,0 +1,220 @@
+@import "/colors.scss";
+@import "./fonts.scss";
+
+body {
+  color: $dracula;
+}
+
+header {
+  margin-bottom: 20px;
+  padding: 20px 0;
+  border-bottom: 2px solid $line-light;
+}
+
+h1 {
+  margin: 0 0 10px 0;
+  color: $turquoise;
+  font-family: montserrat;
+}
+
+h3 {
+  margin: 10px 0;
+}
+
+article {
+  margin: 20px 0;
+  border-bottom: 2px solid $line-light;
+}
+
+ul,
+ol {
+  margin-left: 20px;
+}
+
+blockquote {
+  margin: 20px 0;
+}
+
+.float-right-container {
+  width: 100%;
+  height: 75px;
+}
+
+.detail {
+  display: block;
+  color: $frozen;
+}
+
+.layout-container {
+  min-height: 100vh;
+  transition: color 0.2s ease-out, background 0.2s ease-out;
+}
+
+.layout {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 30px;
+}
+
+.emoji-left {
+  margin-right: 10px;
+}
+
+.emoji-right {
+  margin-left: 10px;
+}
+
+.title-only {
+  h3 {
+    line-height: 40px;
+    margin: 0;
+    font-family: montserrat;
+  }
+}
+
+.flex {
+  display: flex;
+}
+
+.space-between {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
+  flex-wrap: wrap-reverse;
+}
+
+.not-found-page {
+  text-align: center;
+  margin-top: 100px;
+}
+
+.last-active {
+  margin: 30px 0 0 0;
+}
+
+.gatsby-highlight {
+  code {
+    font-size: 10pt;
+  }
+  margin: 20px 0;
+}
+
+.avatar {
+  flex: 0;
+  margin: 0 10px 20px 0;
+}
+
+.bio {
+  margin-bottom: 10px;
+}
+
+.post-date {
+  line-height: 20px;
+  display: block;
+}
+
+.bio-right {
+  margin-top: 5px;
+}
+
+.post-description {
+  margin-bottom: 20px;
+}
+
+.post {
+  transition: 0.2s all ease;
+  margin-bottom: 40px;
+  padding: 25px;
+  border: 2px solid $line-light;
+
+  h2 {
+    margin: 0 0 5px 0;
+  }
+}
+
+.post:focus {
+  outline: 0;
+  box-shadow: 0 0 2px 3px $turquoise;
+}
+
+.post-compact {
+  margin-bottom: 10px;
+  padding: 10px 15px;
+
+  h2 {
+    margin: 0;
+  }
+}
+
+.toggle-container {
+  touch-action: pan-x;
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  background-color: transparent;
+  border: 0;
+  padding: 0;
+  outline: 0;
+}
+
+.toggle-container:focus .toggle {
+  box-shadow: 0 0 2px 3px $turquoise;
+}
+
+.toggle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background-color: #fafafa;
+  border: 0;
+  box-sizing: border-box;
+  transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1) 0ms;
+  transform: translateX(0);
+  cursor: pointer;
+  outline: 0;
+}
+
+.toggle:focus {
+  box-shadow: 0 0 2px 3px $turquoise;
+}
+
+.toggle-checked {
+  transform: translateX(35px);
+}
+
+.toggle-track {
+  cursor: pointer;
+  width: 70px;
+  height: 35px;
+  display: flex;
+  border-radius: 35px;
+  box-sizing: border-box;
+  padding: 0;
+}
+
+.toggle-option {
+  flex: 1;
+  text-align: center;
+  line-height: 32px;
+  width: 35px;
+  height: 35px;
+}
+
+.toggle-track {
+  border: 2px solid $line-light;
+}
+
+.toggle {
+  background-color: $line-light;
+}
+
+.float-left {
+  float: left;
+}
+
+.float-right {
+  float: right;
+}
