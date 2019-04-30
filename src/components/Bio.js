@@ -9,7 +9,7 @@ const Bio = ({ postDate, postTimeToRead }) => {
     <section className="bio flex">
       <Avatar />
       <div className="bio-right">
-        <span>{author}</span>
+        <strong>{author}</strong>
         <span className="post-date">
           <small className="detail">
             {postDate && postTimeToRead ? (

@@ -4,7 +4,7 @@ import Image from "gatsby-image"
 import get from "lodash/get"
 import { useAvatar } from "../hooks/useAvatar"
 
-const Avatar = ({ avatarSize = 60 }) => {
+const Avatar = ({ avatarSize = 50 }) => {
   const { avatar } = useAvatar()
 
   return (
@@ -22,7 +22,6 @@ const Avatar = ({ avatarSize = 60 }) => {
             height: avatarSize,
           }}
           imgStyle={{
-            padding: 5,
             borderRadius: `100%`,
           }}
         />

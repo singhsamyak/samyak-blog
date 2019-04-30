@@ -3,7 +3,13 @@
 
 body {
   color: $dracula;
-  font-family: "Merriweather", serif;
+}
+
+body,
+h2,
+h3,
+h4 {
+  font-family: "Lora", serif;
 }
 
 h1 {
@@ -32,9 +38,16 @@ blockquote {
 }
 
 header {
-  border-bottom: 1px solid #eee;
   padding: 20px;
-  box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.08);
+
+  h1 {
+    font-family: "Pacifico", cursive;
+    font-size: 20pt;
+    color: $dracula;
+    line-height: 40px;
+    margin-left: 10px;
+  }
 }
 
 .fixed-header {
@@ -51,7 +64,7 @@ header {
 }
 
 .all-posts {
-  margin-top: 60px;
+  margin-top: 120px;
 }
 
 .header-info {
@@ -59,13 +72,7 @@ header {
 }
 
 .title-only {
-  h3 {
-    line-height: 40px;
-    margin: 0;
-    font-family: "Pacifico", cursive;
-  }
-
-  .blog-title {
+  h1 {
     margin-top: 10px;
   }
 }
@@ -106,7 +113,6 @@ header {
 .space-between {
   display: flex;
   justify-content: space-between;
-  // flex-wrap: wrap;
 }
 
 .not-found-page {
@@ -127,7 +133,7 @@ header {
 
 .avatar {
   flex: 0;
-  margin: 0 10px 0 0;
+  margin: 5px 10px 0 0;
 }
 
 .bio {
@@ -179,7 +185,7 @@ header {
 }
 
 .theme-toggle-home {
-  margin-top: 12px;
+  margin-top: 18px;
 }
 
 .toggle-container {
@@ -199,18 +205,20 @@ header {
 
 .toggle {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 35px;
-  height: 35px;
+  top: 2px;
+  left: 2px;
+  width: 22px;
+  height: 22px;
   display: block;
   border-radius: 100%;
-  background-color: $line-light;
+  background-color: $white;
   transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1) 0ms;
   transform: translateX(0);
   cursor: pointer;
-  border: 0;
+  border: 2px solid $line-light;
   outline: 0;
+  padding: 2px;
+  border: 0;
 }
 
 .toggle:focus {
@@ -218,23 +226,24 @@ header {
 }
 
 .toggle-checked {
-  transform: translateX(30px);
+  transform: translateX(23px);
 }
 
 .toggle-track {
   cursor: pointer;
-  width: 65px;
-  height: 35px;
+  width: 50px;
+  height: 26px;
   display: flex;
   border-radius: 25px;
   padding: 0;
-  border: 2px solid $line-light;
+  background: $line-dark;
 }
 
 .toggle-option {
   flex: 1;
   text-align: center;
-  line-height: 32px;
-  width: 35px;
-  height: 35px;
+  line-height: 27px;
+  width: 19px;
+  height: 19px;
+  font-size: 9pt;
 }

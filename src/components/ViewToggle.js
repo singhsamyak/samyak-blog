@@ -9,7 +9,7 @@ const Compact = (
 
 const Verbose = (
   <span role="img" aria-label="newspaper emoji">
-    📰
+    📄
   </span>
 )
 

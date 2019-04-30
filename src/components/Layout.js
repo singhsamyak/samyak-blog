@@ -20,13 +20,13 @@ const Layout = ({ location, title, description, children, lastActive }) => {
       <div className="space-between header-container">
         <div className="flex">
           {isHome ? <Avatar /> : null}
-          <h3 className={`${isHome ? "blog-title" : ""}`}>
+          <h1>
             <Link style={LinkInlineStyles} to={`/`}>
               {title}
             </Link>
-          </h3>
+          </h1>
         </div>
-        <div className={`${isHome ? "theme-toggle-home" : ""}`}>
+        <div className="theme-toggle-home">
           <ThemeToggle theme={theme} onToggle={toggleTheme} />
         </div>
       </div>
