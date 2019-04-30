@@ -5,7 +5,8 @@
   color: $white;
 
   header {
-    border-bottom: 2px solid $line-dark;
+    border: 0;
+    box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.1);
   }
 
   h2,
@@ -21,6 +22,10 @@
 
   blockquote {
     border-left-color: $line-dark;
+  }
+
+  .fixed-header {
+    background: $dracula;
   }
 
   .gatsby-highlight {

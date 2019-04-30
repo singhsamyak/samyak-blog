@@ -1,41 +1,27 @@
 import React from "react"
 import { graphql } from "gatsby"
 import get from "lodash/get"
-import { useCompactView } from "../hooks/useCompactView"
 import Layout from "../components/Layout"
 import Posts from "../components/Posts"
 import SEO from "../components/SEO"
-import ViewToggle from "../components/ViewToggle"
 
 export default function(props) {
-  const [viewMode, toggleViewMode] = useCompactView()
-
   const { data } = props
   const siteTitle = get(data, "site.siteMetadata.title")
   const siteDescription = get(data, "site.siteMetadata.description")
   const posts = get(data, "allMarkdownRemark.edges")
-
-  const lastPostDate = new Date(posts[0].node.frontmatter.date)
-  const today = new Date()
-  const lastActive = Math.floor(
-    (today.getTime() - lastPostDate.getTime()) / 1000 / 60 / 60 / 24
-  )
 
   return (
     <Layout
       location={props.location}
       title={siteTitle}
       description={siteDescription}
-      lastActive={lastActive}
     >
       <SEO
         title="Samyak"
         keywords={[`blog`, `gatsby`, `javascript`, `react`]}
       />
-      <div className="float-right-container">
-        <ViewToggle viewMode={viewMode} onToggle={toggleViewMode} />
-      </div>
-      <Posts posts={posts} isCompactView={viewMode === "compact"} />
+      <Posts posts={posts} />
     </Layout>
   )
 }

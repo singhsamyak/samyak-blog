@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: `Samyak`,
     author: `Samyak Singh`,
-    description: `Writing to think well, to be less wrong.`,
+    description: `Writing to think well and be less wrong.`,
     siteUrl: `https://www.samyaksingh.com/`,
     social: {},
   },

@@ -1,12 +1,16 @@
 import React from "react"
 import { Link } from "gatsby"
+import ViewToggle from "../components/ViewToggle"
+import { useCompactView } from "../hooks/useCompactView"
 
-const Posts = ({ isCompactView, posts }) => {
+const Posts = ({ posts }) => {
+  const [viewMode, toggleViewMode] = useCompactView()
+  const isCompactView = viewMode === "compact"
+
   const renderPosts = posts =>
     posts.map(postItem => {
       const { node: post } = postItem
       const title = post.frontmatter.title || "Untitled"
-
       const postClass = isCompactView ? "post post-compact" : "post"
 
       return (
@@ -35,7 +39,14 @@ const Posts = ({ isCompactView, posts }) => {
       )
     })
 
-  return <section>{renderPosts(posts)}</section>
+  return (
+    <section className="all-posts">
+      <div className="space-between toggles">
+        <ViewToggle viewMode={viewMode} onToggle={toggleViewMode} />
+      </div>
+      {renderPosts(posts)}
+    </section>
+  )
 }
 
 export default Posts
