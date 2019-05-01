@@ -16,12 +16,15 @@
   h2,
   h3,
   blockquote,
-  small {
+  small,
+  strong,
+  span,
+  p {
     color: $white;
   }
 
   article {
-    border-bottom: 2px solid $line-dark;
+    border-bottom: 1px solid $line-dark;
   }
 
   blockquote {
@@ -32,17 +35,23 @@
     background: $dracula;
   }
 
-  .gatsby-highlight {
-    pre {
-      border: 2px solid $line-dark;
-    }
-  }
-
   .detail {
     color: $silver;
   }
 
   .post {
-    border: 2px solid $line-dark;
+    border: 1px solid $line-dark;
+  }
+
+  .view-mode {
+    button {
+      background: $line-dark;
+      border: 1px solid $line-dark;
+    }
+
+    .selected {
+      background: $line-light;
+      color: $dracula;
+    }
   }
 }

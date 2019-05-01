@@ -2,25 +2,29 @@ import React from "react"
 import Avatar from "./Avatar"
 import { useSiteMetadata } from "../hooks/useSiteMetadata"
 
-const Bio = ({ postDate, postTimeToRead }) => {
+const BioDescription = ({ description }) => (
+  <span className="bio-description">
+    <small className="detail">{description}</small>
+  </span>
+)
+
+const Bio = ({ postDate, postTimeToRead, bioDescription }) => {
   const { author, description } = useSiteMetadata()
+  const postDescription =
+    postDate && postTimeToRead
+      ? `${postDate} • ${postTimeToRead} min read`
+      : description
 
   return (
     <section className="bio flex">
-      <Avatar />
+      <Avatar avatarSize={45} />
       <div className="bio-right">
         <strong>{author}</strong>
-        <span className="post-date">
-          <small className="detail">
-            {postDate && postTimeToRead ? (
-              <span>
-                {postDate} • {postTimeToRead} min read
-              </span>
-            ) : (
-              <span>{description}</span>
-            )}
-          </small>
-        </span>
+        {bioDescription ? (
+          <BioDescription description={bioDescription} />
+        ) : (
+          <BioDescription description={postDescription} />
+        )}
       </div>
     </section>
   )

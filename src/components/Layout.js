@@ -1,6 +1,5 @@
 import React from "react"
 import { Link } from "gatsby"
-import Avatar from "./Avatar"
 import ThemeToggle from "./ThemeToggle"
 import { useTheme } from "../hooks/useTheme"
 
@@ -12,14 +11,11 @@ const LinkInlineStyles = {
 
 const Layout = ({ location, title, description, children, lastActive }) => {
   const [theme, toggleTheme] = useTheme()
-  const rootPath = `${__PATH_PREFIX__}/`
-  const isHome = location.pathname === rootPath
 
   const renderHeader = () => (
     <header className="title-only fixed-header">
       <div className="space-between header-container">
         <div className="flex">
-          {isHome ? <Avatar /> : null}
           <h1>
             <Link style={LinkInlineStyles} to={`/`}>
               {title}

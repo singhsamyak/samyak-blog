@@ -1,7 +1,13 @@
 import React from "react"
 import { Link } from "gatsby"
+import Bio from "./Bio"
+import ViewMode from "./ViewMode"
+import { useCompactView } from "../hooks/useCompactView"
 
 const Posts = ({ posts }) => {
+  const [viewMode, toggleViewMode] = useCompactView()
+  const isCompactView = viewMode === "compact"
+
   const renderPosts = posts =>
     posts.map(postItem => {
       const { node: post } = postItem
@@ -14,24 +20,41 @@ const Posts = ({ posts }) => {
           key={post.fields.slug}
         >
           <div className="post">
+            {isCompactView ? null : (
+              <Bio
+                bioDescription={`${post.frontmatter.date} • ${
+                  post.timeToRead
+                } min read`}
+              />
+            )}
             <h2>{title}</h2>
             <div>
-              <small>
-                {post.frontmatter.date} • {post.timeToRead} min read
-              </small>
               <span
                 className="detail"
                 dangerouslySetInnerHTML={{
-                  __html: post.frontmatter.description || post.excerpt,
+                  __html: post.frontmatter.description || "",
                 }}
               />
+              {isCompactView ? null : (
+                <p
+                  className="post-excerpt"
+                  dangerouslySetInnerHTML={{
+                    __html: post.excerpt,
+                  }}
+                />
+              )}
             </div>
           </div>
         </Link>
       )
     })
 
-  return <section className="all-posts">{renderPosts(posts)}</section>
+  return (
+    <section className="all-posts">
+      <ViewMode viewMode={viewMode} onChange={toggleViewMode} />
+      {renderPosts(posts)}
+    </section>
+  )
 }
 
 export default Posts

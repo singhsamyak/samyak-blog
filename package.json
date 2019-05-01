@@ -5,6 +5,8 @@
   "version": "0.1.0",
   "author": "Samyak Singh <samyaksingh94@gmail.com>",
   "dependencies": {
+    "@material-ui/core": "^3.9.3",
+    "@material-ui/icons": "^3.0.2",
     "gatsby": "^2.3.15",
     "gatsby-image": "^2.0.37",
     "gatsby-plugin-feed": "^2.1.0",

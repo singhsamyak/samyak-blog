@@ -3,19 +3,20 @@
 
 body {
   color: $dracula;
+  font-size: 14pt;
 }
 
 body,
+h1,
 h2,
 h3,
 h4 {
-  font-family: "Lora", serif;
+  font-family: "Source Serif Pro", serif;
 }
 
 h1 {
   margin: 0 0 10px 0;
   color: $turquoise;
-  font-family: "Pacifico", cursive;
 }
 
 h3 {
@@ -24,8 +25,20 @@ h3 {
 
 article {
   margin-bottom: 20px;
-  padding-top: 100px;
+  padding-top: 120px;
   border-bottom: 1px solid $line-light;
+  font-size: 14pt;
+
+  a {
+    color: $turquoise;
+    text-decoration: none;
+    box-shadow: none;
+  }
+
+  /* Portrait */
+  @media only screen and (max-device-width: 500px) {
+    font-size: 15pt;
+  }
 }
 
 ul,
@@ -42,11 +55,10 @@ header {
   box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.08);
 
   h1 {
-    font-family: "Pacifico", cursive;
-    font-size: 20pt;
+    font-size: 28pt;
     color: $dracula;
     line-height: 40px;
-    margin-left: 10px;
+    font-family: "Yellowtail", cursive;
   }
 }
 
@@ -64,7 +76,7 @@ header {
 }
 
 .all-posts {
-  margin-top: 120px;
+  margin-top: 100px;
 }
 
 .header-info {
@@ -93,7 +105,7 @@ header {
 }
 
 .layout {
-  max-width: 600px;
+  max-width: 650px;
   margin: 0 auto;
   padding: 30px;
 }
@@ -125,22 +137,26 @@ header {
 }
 
 .gatsby-highlight {
+  pre {
+    background: $code-bg;
+    border-radius: 5px;
+  }
   code {
-    font-size: 10pt;
+    font-size: 12pt;
   }
   margin: 20px 0;
 }
 
 .avatar {
   flex: 0;
-  margin: 5px 10px 0 0;
+  margin: 10px 10px 0 0;
 }
 
 .bio {
-  margin-bottom: 10px;
+  margin-bottom: 40px;
 }
 
-.post-date {
+.bio-description {
   line-height: 20px;
   display: block;
 }
@@ -150,34 +166,33 @@ header {
 }
 
 .post-description {
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 .post {
   transition: 0.2s all ease;
   margin-bottom: 25px;
   padding: 25px;
-  border-radius: 6px;
+  border-radius: 5px;
   border: 1px solid $line-light;
 
   h2 {
     margin: 0 0 5px 0;
+  }
+
+  .bio {
+    margin-bottom: 10px;
+  }
+
+  .post-excerpt {
+    margin: 20px 0 0 0;
+    display: block;
   }
 }
 
 .post:focus {
   outline: 0;
   box-shadow: 0 0 2px 3px $turquoise;
-}
-
-.post-compact {
-  margin-bottom: 10px;
-  padding: 10px 15px;
-
-  h2 {
-    margin: 0;
-    font-size: 16pt;
-  }
 }
 
 .toggles {
@@ -246,4 +261,42 @@ header {
   width: 19px;
   height: 19px;
   font-size: 9pt;
+}
+
+.view-mode {
+  margin-bottom: 20px;
+  padding: 0;
+  box-sizing: border-box;
+  max-height: 40px;
+  overflow: hidden;
+
+  button {
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1) 0ms;
+    border: 1px solid $line-light;
+    outline: 0;
+    height: 40px;
+    width: 40px;
+    line-height: 52px;
+    text-align: center;
+    padding: 0;
+    cursor: pointer;
+    color: $dracula;
+  }
+
+  button:first-child {
+    border-right: 0;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+  }
+
+  button:last-child {
+    border-left: 0;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+  }
+
+  .selected {
+    background: $line-dark;
+    color: $white;
+  }
 }
