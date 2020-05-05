@@ -1,7 +1,7 @@
 import React from "react"
-import { ViewStream, ViewHeadline } from "@material-ui/icons"
+import { ViewAgenda, ViewHeadline } from "@material-ui/icons"
 
-const ViewToggle = ({ viewMode, onChange }) => {
+const ViewToggle = ({ viewMode = "verbose", onChange }) => {
   const onClick = viewType => () => {
     onChange(viewType)
   }
@@ -19,7 +19,7 @@ const ViewToggle = ({ viewMode, onChange }) => {
           onClick={onClick("compact")}
           className={`${viewMode === "verbose" ? "selected" : ""}`}
         >
-          <ViewStream />
+          <ViewAgenda />
         </button>
       </div>
     </div>

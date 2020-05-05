@@ -25,7 +25,6 @@ const Post = props => {
         />
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
       </article>
-      <Bio />
     </Layout>
   )
 }

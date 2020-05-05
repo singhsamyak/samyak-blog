@@ -4,11 +4,11 @@ import { useSiteMetadata } from "../hooks/useSiteMetadata"
 
 const BioDescription = ({ description }) => (
   <span className="bio-description">
-    <small className="detail">{description}</small>
+    <small className="post-metadata">{description}</small>
   </span>
 )
 
-const Bio = ({ postDate, postTimeToRead, bioDescription }) => {
+const Bio = ({ postDate, postTimeToRead }) => {
   const { author, description } = useSiteMetadata()
   const postDescription =
     postDate && postTimeToRead
@@ -20,11 +20,7 @@ const Bio = ({ postDate, postTimeToRead, bioDescription }) => {
       <Avatar avatarSize={45} />
       <div className="bio-right">
         <strong>{author}</strong>
-        {bioDescription ? (
-          <BioDescription description={bioDescription} />
-        ) : (
-          <BioDescription description={postDescription} />
-        )}
+        <BioDescription description={postDescription} />
       </div>
     </section>
   )

@@ -6,7 +6,6 @@
 
   header {
     border: 0;
-    box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.2);
 
     h1 {
       color: $white;
@@ -35,12 +34,10 @@
     background: $dracula;
   }
 
-  .detail {
+  .post-description {
+    line-height: normal;
+    font-size: 1rem;
     color: $silver;
-  }
-
-  .post {
-    border: 1px solid $line-dark;
   }
 
   .view-mode {

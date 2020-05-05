@@ -2,6 +2,7 @@
 title: Meditating Simply
 date: "2018-10-31"
 description: How to meditate easily, and what it teaches us..
+featuredImage: "./birds-eye.jpg"
 ---
 
 Meditation is not complex. It does not require apps, music, or chants. It does not demand a religious belief. It does not need serene landscapes, tall mountains, or surreal sunrises. It surely does not expect us to be a Buddha.

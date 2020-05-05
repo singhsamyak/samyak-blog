@@ -3,7 +3,8 @@
 
 body {
   color: $dracula;
-  font-size: 14pt;
+  font-size: 1.15rem;
+  font-weight: 300;
 }
 
 body,
@@ -11,7 +12,7 @@ h1,
 h2,
 h3,
 h4 {
-  font-family: "Source Serif Pro", serif;
+  font-family: "Lato", sans-serif;
 }
 
 h1 {
@@ -25,25 +26,49 @@ h3 {
 
 article {
   margin-bottom: 20px;
-  padding-top: 120px;
+  padding: 120px 0 40px 0;
   border-bottom: 1px solid $line-light;
-  font-size: 14pt;
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  h3 {
+    font-size: 1.25rem;
+  }
+
+  h4 {
+    color: $frozen;
+  }
+
+  h3,
+  h4 {
+    margin: 20px 0 15px 0;
+  }
+  p {
+    margin-bottom: 10px;
+  }
 
   a {
     color: $turquoise;
     text-decoration: none;
     box-shadow: none;
+    font-weight: normal;
   }
 
   /* Portrait */
-  @media only screen and (max-device-width: 500px) {
-    font-size: 15pt;
+  @media only screen and (max-width: 600px) {
+    font-size: 14pt;
   }
 }
 
 ul,
 ol {
   margin-left: 20px;
+
+  li {
+    margin: 0;
+  }
 }
 
 blockquote {
@@ -51,13 +76,11 @@ blockquote {
 }
 
 header {
-  padding: 20px;
-  box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.08);
+  padding: 10px 20px;
 
   h1 {
-    font-size: 28pt;
+    font-size: 2rem;
     color: $dracula;
-    line-height: 40px;
     font-family: "Yellowtail", cursive;
   }
 }
@@ -76,7 +99,7 @@ header {
 }
 
 .all-posts {
-  margin-top: 100px;
+  margin-top: 110px;
 }
 
 .header-info {
@@ -94,18 +117,13 @@ header {
   height: 75px;
 }
 
-.detail {
-  display: block;
-  color: $frozen;
-}
-
 .layout-container {
   min-height: 100vh;
   transition: color 0.2s ease-out, background 0.2s ease-out;
 }
 
 .layout {
-  max-width: 650px;
+  max-width: 700px;
   margin: 0 auto;
   padding: 30px;
 }
@@ -169,24 +187,47 @@ header {
   margin-bottom: 10px;
 }
 
+.post-metadata {
+  font-size: 0.75rem;
+  color: $frozen;
+  text-transform: uppercase;
+  font-weight: normal;
+  letter-spacing: 0.05rem;
+}
+
 .post {
-  transition: 0.2s all ease;
+  display: flex;
+  justify-content: space-between;
+  transition: all 0.5s ease;
   margin-bottom: 25px;
-  padding: 25px;
-  border-radius: 5px;
-  border: 1px solid $line-light;
+  border-radius: 2px;
+  box-sizing: border-box;
 
   h2 {
     margin: 0 0 5px 0;
+    font-size: 1.6rem;
   }
 
   .bio {
-    margin-bottom: 10px;
+    margin-bottom: 20px;
   }
 
-  .post-excerpt {
-    margin: 20px 0 0 0;
-    display: block;
+  .post-featured-image {
+    flex: 3;
+    overflow: hidden;
+  }
+
+  .post-content {
+    padding: 20px;
+    flex: 5;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .post-description {
+    line-height: normal;
+    font-size: 1.1rem;
+    color: $frozen;
   }
 }
 
@@ -195,12 +236,21 @@ header {
   box-shadow: 0 0 2px 3px $turquoise;
 }
 
+.compact {
+  transition: 0.2s all ease;
+
+  .bio,
+  .post-excerpt {
+    display: none;
+  }
+}
+
 .toggles {
   padding: 50px 0 30px 0;
 }
 
 .theme-toggle-home {
-  margin-top: 18px;
+  margin-top: 14px;
 }
 
 .toggle-container {
@@ -222,8 +272,8 @@ header {
   position: absolute;
   top: 2px;
   left: 2px;
-  width: 22px;
-  height: 22px;
+  width: 16px;
+  height: 16px;
   display: block;
   border-radius: 100%;
   background-color: $white;
@@ -241,13 +291,13 @@ header {
 }
 
 .toggle-checked {
-  transform: translateX(23px);
+  transform: translateX(18px);
 }
 
 .toggle-track {
   cursor: pointer;
-  width: 50px;
-  height: 26px;
+  width: 38px;
+  height: 20px;
   display: flex;
   border-radius: 25px;
   padding: 0;
@@ -257,14 +307,20 @@ header {
 .toggle-option {
   flex: 1;
   text-align: center;
-  line-height: 27px;
-  width: 19px;
-  height: 19px;
-  font-size: 9pt;
+  line-height: 20px;
+  width: 13px;
+  height: 13px;
+  color: $white;
+
+  svg {
+    width: 14px;
+    height: 14px;
+    margin: 0 2px 0 0;
+  }
 }
 
 .view-mode {
-  margin-bottom: 20px;
+  margin-bottom: 30px;
   padding: 0;
   box-sizing: border-box;
   max-height: 40px;

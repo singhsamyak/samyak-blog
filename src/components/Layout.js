@@ -2,6 +2,7 @@ import React from "react"
 import { Link } from "gatsby"
 import ThemeToggle from "./ThemeToggle"
 import { useTheme } from "../hooks/useTheme"
+import Avatar from "./Avatar"
 
 const LinkInlineStyles = {
   boxShadow: `none`,

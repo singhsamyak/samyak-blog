@@ -1,26 +1,10 @@
 import React from "react"
 import Toggle from "./Toggle"
-
-const Dark = (
-  <span role="img" aria-label="moon emoji">
-    🌙
-  </span>
-)
-
-const Light = (
-  <span role="img" aria-label="sun emoji">
-    🌞
-  </span>
-)
+import { WbSunny, Brightness3 } from "@material-ui/icons"
 
 const ThemeToggle = ({ style, theme, onToggle }) => (
   <div style={style}>
-    <Toggle
-      onToggle={onToggle}
-      left={Dark}
-      right={Light}
-      isChecked={theme === "dark" ? true : false}
-    />
+    <Toggle onToggle={onToggle} isChecked={theme === "dark" ? true : false} />
   </div>
 )
 

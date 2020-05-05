@@ -2,6 +2,7 @@
 title: What I Talk About When I Talk About Making Momos
 date: "2018-08-29"
 description: A delightful conversation with anyone, anywhere.
+featuredImage: "./making-momos.jpg"
 ---
 
 ![Mom teaching Bishal how to make momos](./making-momos.jpg)
